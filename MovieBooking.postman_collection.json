@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "3a71f43d-b594-483f-b567-121d224d11e9",
+		"name": "MovieBooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list of theaters in a city, with specific movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/theater/?city=Howrah&movie_id=1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"theater",
+						""
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Howrah"
+						},
+						{
+							"key": "movie_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of theaters in a city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/theater/?city=Kolkata",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"theater",
+						""
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Kolkata"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book a movie for a specific show timing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":1,\n    \"show_timing_id\":4,\n    \"seat_ids\":[1,2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}/booking/",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8000"
+		}
+	]
+}
